@@ -11,5 +11,9 @@ public class CalculatorTest {
 		assertEquals(0,calculator.Add(""));
 	}
 	
-	
+	@Test
+	public void shouldReturnNumberOnNumber() {					//Method 2
+		Calculator calculator = new Calculator();
+		assertEquals(calculator.Add("1"),1);
+	}
 }
