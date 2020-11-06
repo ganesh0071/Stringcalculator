@@ -2,8 +2,9 @@
 public class Calculator {
 
 	public int Add(String input) {
-		String[] numbers = input.split(",");
+		String[] numbers = input.split(",|\n");
 		int sum=0;
+		
 		if(isEmpty(input)) {
 			return 0;	
 		}
@@ -16,7 +17,6 @@ public class Calculator {
 			}
 			return sum;
 		}
-	
 	}
 	
 	private boolean isEmpty(String input) {

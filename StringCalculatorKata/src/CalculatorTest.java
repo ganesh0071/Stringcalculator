@@ -34,4 +34,10 @@ public class CalculatorTest {
 	public void handleUnknownAmountOfNumbers() {				//Method 4
 		assertEquals(calculator.Add("1,2,3,4,5,6"),21);
 	}
+	
+	@Test
+	public void delimitersWithNewlineOrCommas() {				//Method 5
+		assertEquals(calculator.Add("1,2\n3"),6);
+	}
+	
 }
