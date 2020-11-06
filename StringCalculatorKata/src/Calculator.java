@@ -2,10 +2,10 @@
 public class Calculator {
 
 	private final String delimiter =",|\n";
+	private String[] numbers;
 	
 	public int Add(String input) {
-		String[] numbers = input.split(delimiter);
-		int sum=0;
+		numbers = input.split(delimiter);
 		
 		if(isEmpty(input)) {
 			return 0;	
@@ -14,10 +14,7 @@ public class Calculator {
 			return stringToInt(input);
 		}
 		else  {
-			for(int i=0;i<numbers.length;i++) {
-				sum+=stringToInt(numbers[i]);
-			}
-			return sum;
+			return addTheNumbers();
 		}
 	}
 	
@@ -28,5 +25,13 @@ public class Calculator {
 	
 	private int stringToInt(String input) {
 		return Integer.parseInt(input);
+	}
+	
+	private int addTheNumbers() {
+		int sum=0;
+		for(int i=0;i<numbers.length;i++) {
+			sum+=stringToInt(numbers[i]);
+		}
+		return sum;
 	}
 }
