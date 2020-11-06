@@ -16,7 +16,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void shouldReturnZeroOnEmptyString() { 				// Method 1
+	public void shouldReturnZeroOnEmptyString() { 				//Method 1
 		assertEquals(0,calculator.Add(""));
 	}
 	
@@ -31,7 +31,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void handleUnknownAmountOfNumbers() {
+	public void handleUnknownAmountOfNumbers() {				//Method 4
 		assertEquals(calculator.Add("1,2,3,4,5,6"),21);
 	}
 }

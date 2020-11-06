@@ -3,14 +3,18 @@ public class Calculator {
 
 	public int Add(String input) {
 		String[] numbers = input.split(",");
+		int sum=0;
 		if(isEmpty(input)) {
 			return 0;	
 		}
 		else if (numbers.length==1) {
 			return stringToInt(input);
 		}
-		else {
-			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+		else  {
+			for(int i=0;i<numbers.length;i++) {
+				sum+=stringToInt(numbers[i]);
+			}
+			return sum;
 		}
 	
 	}
