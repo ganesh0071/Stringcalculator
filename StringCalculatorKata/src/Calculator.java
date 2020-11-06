@@ -2,10 +2,17 @@
 public class Calculator {
 
 	public int Add(String input) {
+		String[] numbers = input.split(",");
 		if(isEmpty(input)) {
 			return 0;	
 		}
-		return stringToInt(input);
+		else if (numbers.length==1) {
+			return Integer.parseInt(input);
+		}
+		else  {
+			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+		}
+	
 	}
 	
 	private boolean isEmpty(String input) {
