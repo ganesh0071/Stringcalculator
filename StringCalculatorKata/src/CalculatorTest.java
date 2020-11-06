@@ -16,4 +16,10 @@ public class CalculatorTest {
 		Calculator calculator = new Calculator();
 		assertEquals(calculator.Add("1"),1);
 	}
+	
+	@Test
+	public void twoNumbersCommaDelimitedReturnSum() {			//Method 3
+		Calculator calculator = new Calculator();
+		assertEquals(calculator.Add("1,2"),3);
+	}
 }
