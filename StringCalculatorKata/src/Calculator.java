@@ -7,9 +7,9 @@ public class Calculator {
 			return 0;	
 		}
 		else if (numbers.length==1) {
-			return Integer.parseInt(input);
+			return stringToInt(input);
 		}
-		else  {
+		else {
 			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
 		}
 	

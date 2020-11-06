@@ -29,4 +29,9 @@ public class CalculatorTest {
 	public void twoNumbersCommaDelimitedReturnSum() {			//Method 3
 		assertEquals(calculator.Add("1,2"),3);
 	}
+	
+	@Test
+	public void handleUnknownAmountOfNumbers() {
+		assertEquals(calculator.Add("1,2,3,4,5,6"),21);
+	}
 }
