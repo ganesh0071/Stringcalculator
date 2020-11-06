@@ -2,7 +2,7 @@
 public class Calculator {
 
 	public int Add(String input) {
-		return -1;
+		return 0;
 	}
 	
 }
