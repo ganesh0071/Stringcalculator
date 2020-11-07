@@ -37,6 +37,9 @@ public class Calculator {
 
 		int sum=0;
 		for(int i=0;i<numbers.length;i++) {
+			if(stringToInt(numbers[i])>1000) {
+				continue;
+			}
 			sum+=stringToInt(numbers[i]);
 		}
 		return sum;

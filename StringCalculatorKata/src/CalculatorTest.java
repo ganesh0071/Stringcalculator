@@ -41,13 +41,19 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void delimiterWithaPattern() throws Exception {
+	public void delimiterWithaPattern() throws Exception {						//Method 6
 		assertEquals(calculator.Add("//;\n1;2"),3);
 	}
 	
 	@Test(expectedExceptions=Exception.class)
-	public void returnsExceptionForNegativeNumbers() throws Exception {
+	public void returnsExceptionForNegativeNumbers() throws Exception {			//Method 7
 		calculator.Add("-1");
 	}
+	
+	@Test
+	public void ignoringNumbersGreaterThan1000() throws Exception {				//Method 8
+		assertEquals(calculator.Add("1001,2"),2);
+	}
+	
 	
 }
