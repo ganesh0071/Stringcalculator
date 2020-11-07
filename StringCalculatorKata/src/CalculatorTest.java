@@ -37,7 +37,13 @@ public class CalculatorTest {
 	
 	@Test
 	public void delimitersWithNewlineOrCommas() {				//Method 5
-		assertEquals(calculator.Add("1,2\n3"),6);
+		assertEquals(calculator.Add("1\n2,3"),6);
 	}
+	
+	@Test
+	public void delimiterWithaPattern() {
+		assertEquals(calculator.Add("//;\n1;2"),3);
+	}
+	
 	
 }
