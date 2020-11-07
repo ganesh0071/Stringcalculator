@@ -7,7 +7,7 @@ public class Calculator {
 	private static String[] numbers;
 
 	public int Add(String input) throws Exception {
-		 
+		
 		numbers = returningOnlyTheNumbers(input);
 		
 		if(isEmpty(input)) {
