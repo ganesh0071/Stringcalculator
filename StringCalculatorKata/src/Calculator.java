@@ -6,7 +6,7 @@ public class Calculator {
 	private static final String delimiter =",|\n";
 	private static String[] numbers;
 	
-	public int Add(String input) {
+	public int Add(String input) throws Exception {
 		 
 		numbers = returningOnlyTheNumbers(input);
 		
@@ -16,6 +16,7 @@ public class Calculator {
 		else if (numbers.length==1) {
 			return stringToInt(input);
 		}
+		
 		else  {
 			return addTheNumbers();
 		}
@@ -25,11 +26,14 @@ public class Calculator {
 		return input.isEmpty();
 	}
 	
-	private int stringToInt(String input) {
+	private int stringToInt(String input) throws Exception {
+		if(Integer.parseInt(input)<0) {
+			throw new Exception("Negative Input!");
+		}
 		return Integer.parseInt(input);
 	}
 	
-	private int addTheNumbers() { 
+	private int addTheNumbers() throws Exception { 
 
 		int sum=0;
 		for(int i=0;i<numbers.length;i++) {
@@ -38,7 +42,7 @@ public class Calculator {
 		return sum;
 	}
 	
-	private String[] returningOnlyTheNumbers(String string) {
+	private String[] returningOnlyTheNumbers(String string)  {
 		if(string.startsWith("//")) {
 			Pattern pattern = Pattern.compile("//(.)\n(.*)");
 			Matcher matcher = pattern.matcher(string);
@@ -54,6 +58,7 @@ public class Calculator {
 		return numbers;
 	}
 
+	
 	
 	
 }

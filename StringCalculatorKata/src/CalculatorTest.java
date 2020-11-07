@@ -16,34 +16,38 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void shouldReturnZeroOnEmptyString() { 				//Method 1
+	public void shouldReturnZeroOnEmptyString() throws Exception { 				//Method 1
 		assertEquals(0,calculator.Add(""));
 	}
 	
 	@Test
-	public void shouldReturnNumberOnNumber() {					//Method 2
+	public void shouldReturnNumberOnNumber() throws Exception {					//Method 2
 		assertEquals(calculator.Add("1"),1);
 	}
 	
 	@Test
-	public void twoNumbersCommaDelimitedReturnSum() {			//Method 3
+	public void twoNumbersCommaDelimitedReturnSum() throws Exception {			//Method 3
 		assertEquals(calculator.Add("1,2"),3);
 	}
 	
 	@Test
-	public void handleUnknownAmountOfNumbers() {				//Method 4
+	public void handleUnknownAmountOfNumbers() throws Exception {				//Method 4
 		assertEquals(calculator.Add("1,2,3,4,5,6"),21);
 	}
 	
 	@Test
-	public void delimitersWithNewlineOrCommas() {				//Method 5
+	public void delimitersWithNewlineOrCommas() throws Exception {				//Method 5
 		assertEquals(calculator.Add("1\n2,3"),6);
 	}
 	
 	@Test
-	public void delimiterWithaPattern() {
+	public void delimiterWithaPattern() throws Exception {
 		assertEquals(calculator.Add("//;\n1;2"),3);
 	}
 	
+	@Test(expectedExceptions=Exception.class)
+	public void returnsExceptionForNegativeNumbers() throws Exception {
+		calculator.Add("-1");
+	}
 	
 }
