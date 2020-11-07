@@ -5,7 +5,7 @@ public class Calculator {
 
 	private static final String delimiter =",|\n";
 	private static String[] numbers;
-	
+
 	public int Add(String input) throws Exception {
 		 
 		numbers = returningOnlyTheNumbers(input);
@@ -61,7 +61,4 @@ public class Calculator {
 		return numbers;
 	}
 
-	
-	
-	
 }
